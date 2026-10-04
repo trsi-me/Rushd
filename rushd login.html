@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="rushd login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="container">
+        <div class="curved-shape ">
+        </div>
+        <div class="form-box login">
+            <h2 class="animation" style="--D:0;">Login</h2>
+            <form id="login-form">
+                <div class="input-box animation" style="--D:1;">
+                    <input type="text" id="login-username" name="username" required>
+                    <label>Username</label>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box animation" style="--D:2;">
+                    <input type="password" id="login-password" name="password" required>
+                    <label for="">password</label>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <div id="login-error" style="color: #ef4444; text-align: center; margin: 10px 0; display: none;"></div>
+                <button type="submit" class="btn animation" style="--D:3;">Login</button>
+                <div class="regi-link animation" style="--D:4;">
+                    <p>Don not have an account? <a href="register.html" class="register-link">Sign UP</a></p>
+                </div>
+            </form>
+        </div>
+        <script src="rushd login.js"></script>
+
+</body>
+
+</html>

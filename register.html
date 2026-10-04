@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="rushd login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="container">
+        <div class="curved-shape "></div>
+        <div class="form-box login">
+            <h2 class="animation" style="--D:0;">Register</h2>
+            <form id="register-form">
+                <div class="input-box animation" style="--D:1;">
+                    <input type="text" id="register-username" name="username" required>
+                    <label>Username</label>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box animation" style="--D:1;">
+                    <input type="email" id="register-email" name="email" required>
+                    <label>Email</label>
+                    <i class='bx bxs-envelope'></i>
+                </div>
+                <div class="input-box animation" style="--D:2;">
+                    <input type="password" id="register-password" name="password" required>
+                    <label>Password</label>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <div id="register-error" style="color: #ef4444; text-align: center; margin: 10px 0; display: none;">
+                </div>
+                <button type="submit" class="btn animation" style="--D:3;">Register</button>
+                <div class="regi-link animation" style="--D:4;">
+                    <p>Already have an account? <a href="rushd login.html" class="login-link">Sign In</a></p>
+                </div>
+            </form>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const registerForm = document.getElementById('register-form');
+                const errorDiv = document.getElementById('register-error');
+
+                if (registerForm) {
+                    registerForm.addEventListener('submit', async function (e) {
+                        e.preventDefault();
+
+                        const username = document.getElementById('register-username').value.trim();
+                        const email = document.getElementById('register-email').value.trim();
+                        const password = document.getElementById('register-password').value;
+
+                        if (!username || !email || !password) {
+                            showError('All fields are required');
+                            return;
+                        }
+
+                        if (password.length < 6) {
+                            showError('Password must be at least 6 characters');
+                            return;
+                        }
+
+                        try {
+                            const response = await fetch('register.php', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({ username: username, email: email, password: password })
+                            });
+
+                            const result = await response.json();
+
+                            if (result.success) {
+                                // Redirect to main page after successful registration
+                                window.location.href = 'rushd.html';
+                            } else {
+                                showError(result.message || 'Registration failed. Please try again.');
+                            }
+                        } catch (error) {
+                            console.error('Register error:', error);
+                            showError('An error occurred. Please try again.');
+                        }
+                    });
+                }
+
+                function showError(message) {
+                    errorDiv.textContent = message;
+                    errorDiv.style.display = 'block';
+                    setTimeout(() => {
+                        errorDiv.style.display = 'none';
+                    }, 5000);
+                }
+            });
+        </script>
+    </div>
+</body>
+
+</html>

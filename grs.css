@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    
+    background: #0a110a; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+   
+    background: #121a12; 
+    
+    border: 1px solid #39ff14; 
+    
+    box-shadow: 0 0 20px #39ff14; 
+    border-radius: 10px;
+    overflow: hidden;
+    width: 700px;
+    max-width: 100%;
+}
+
+.welcome {
+
+    background: linear-gradient(135deg, #163016, #0e200e);
+    color: white;
+    width: 50%;
+    padding: 40px 30px;
+   
+}
+
+.welcome h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.form-box {
+
+    background: #121a12; 
+    width: 50%;
+    padding: 40px 30px;
+    color: white;
+}
+
+.form-box h2 {
+    
+    color: #e6e6e6; 
+    margin-bottom: 20px;
+}
+
+.input-box {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px 35px 10px 10px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #888;
+    color: white;
+}
+
+.input-box label {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    pointer-events: none;
+    transition: 0.3s;
+    color: #aaa;
+}
+
+.input-box input:focus + label,
+.input-box input:valid + label {
+    top: -15px;
+    font-size: 12px;
+    color: #39ff14; 
+}
+
+.input-box i {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: #aaa;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: linear-gradient(to right, #009900, #39ff14); 
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+    box-shadow: 0 0 10px #39ff1480; 
+}
+
+.btn:hover {
+    background: linear-gradient(to right, #007700, #2ae20d);
+}
+
+.login-link {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.login-link a {
+    color: #39ff14; 
+    text-decoration: none;
+}

@@ -1,0 +1,362 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #0b4812;
+    padding: 2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1a1a1a;
+    color: #e5e7eb;
+    line-height: 1.6;
+}
+
+#header {
+    background: #10b981;
+    color: #fff;
+    padding: 15px 40px;
+    position: relative;
+    letter-spacing: 1px;
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#title {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.header-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.header-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.header-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.backend-label {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+}
+
+#dashboard {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.data-panel {
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    flex: 1;
+    max-width: 300px;
+    background-color: #2a2a2a;
+    color: #e5e7eb;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.data-panel:hover {
+    transform: scale(1.05);
+}
+
+.data-panel i {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.panel-label {
+    font-size: 0.9rem;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.panel-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #e5e7eb;
+}
+
+#expense-panel {
+    border-bottom: 4px solid #ef4444;
+}
+
+#expense-panel i {
+    color: #ef4444;
+}
+
+#income-panel {
+    border-bottom: 4px solid #10b981;
+}
+
+#income-panel i {
+    color: #10b981;
+}
+
+#total-panel {
+    border-bottom: 4px solid #3b82f6;
+}
+
+#total-panel i {
+    color: #3b82f6;
+}
+
+#buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+    width: 100%;
+    max-width: 1200px;
+    margin: 30px auto 0;
+    padding: 0 20px;
+}
+
+.table-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 40px;
+}
+
+.table-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #e5e7eb;
+}
+
+.button {
+    padding: 15px 30px;
+    background: #3b82f6;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background: #2563eb;
+}
+
+#transaction-table {
+    margin-top: 30px;
+    border-collapse: collapse;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background: #2a2a2a;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#transaction-table th,
+#transaction-table td {
+    border: none;
+    padding: 15px;
+    text-align: left;
+}
+
+#transaction-table th {
+    background: #3a3a3a;
+    color: #fff;
+    font-size: 18px;
+    padding: 15px;
+}
+
+#transaction-table td {
+    background: #2a2a2a;
+    color: #e5e7eb;
+    border-bottom: 1px solid #3a3a3a;
+    transition: background-color 0.3s ease;
+}
+
+#transaction-table tr:hover td {
+    background: #3a3a3a;
+}
+
+#transaction-table th i {
+    margin-left: 5px;
+    color: #eee;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+#transaction-table th:hover i {
+    color: #10b981;
+}
+
+.expense-type,
+.income-type {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.expense-type {
+    background-color: #ef4444;
+}
+
+.income-type {
+    background-color: #8b5cf6;
+}
+
+.remove-icon {
+    cursor: pointer;
+}
+
+.remove-icon .delete-button {
+    background-color: #ef4444;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.remove-icon .delete-button:hover {
+    background: #dc2626;
+}
+
+.remove-icon i {
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+#add-transaction-dialog {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background-color: #2a2a2a;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    color: #e5e7eb;
+    max-width: 400px;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    border: 1px solid #3a3a3a;
+}
+
+#dialog-title {
+    font-size: 27px;
+    font-weight: bold;
+    color: #10b981;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 1px solid #3a3a3a;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 16px;
+    color: #e5e7eb;
+    margin-bottom: 10px;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #3a3a3a;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+    background-color: #1a1a1a;
+    color: #e5e7eb;
+    box-sizing: border-box;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.input-group button {
+    width: 100%;
+    padding: 15px;
+    color: #fff;
+    background: #3b82f6;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.input-group button:hover {
+    background: #2563eb;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button.cancel {
+    background: #3a3a3a;
+    color: #e5e7eb;
+}
+
+.button.cancel:hover {
+    background: #4a4a4a;
+}
