@@ -3,9 +3,9 @@
 // Run this file once to get the correct password hashes
 
 $passwords = [
-    'admin123' => 'admin',
-    'user123' => 'user',
-    'test123' => 'test'
+    '' => 'admin',
+    '' => 'user',
+    '' => 'test'
 ];
 
 echo "Password Hashes:\n";
@@ -23,9 +23,9 @@ echo "\nSQL INSERT Statements:\n";
 echo "======================\n\n";
 
 $hashes = [
-    'admin' => password_hash('admin123', PASSWORD_DEFAULT),
-    'user' => password_hash('user123', PASSWORD_DEFAULT),
-    'test' => password_hash('test123', PASSWORD_DEFAULT)
+    'admin' => password_hash('', PASSWORD_DEFAULT),
+    'user' => password_hash('', PASSWORD_DEFAULT),
+    'test' => password_hash('', PASSWORD_DEFAULT)
 ];
 
 echo "INSERT INTO `users` (`username`, `email`, `password`) VALUES\n";

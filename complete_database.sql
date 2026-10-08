@@ -41,14 +41,14 @@ CREATE TABLE `transaction_table` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=27;
 
 -- Insert default users
--- Admin user (password: admin123)
+-- Admin user (password: )
 INSERT INTO `users` (`username`, `email`, `password`) 
 VALUES 
-('admin', 'admin@rushd.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'),
--- Regular user (password: user123)
-('user', 'user@rushd.com', '$2y$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
--- Test user (password: test123)
-('test', 'test@rushd.com', '$2y$10$dXJ3SW6G7P50lGmMkkmwe.20cQQubK3.H/Hh0qGqJxJqJqJqJqJqJ');
+('admin', 'admin@rushd.com', ''),
+-- Regular user (password: )
+('user', 'user@rushd.com', ''),
+-- Test user (password: )
+('test', 'test@rushd.com', '');
 
 -- Insert default transactions for admin user (user_id = 1)
 INSERT INTO `transaction_table` (`transaction_type`, `description`, `category`, `amount`, `user_id`) 
